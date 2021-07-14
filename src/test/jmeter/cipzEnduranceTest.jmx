@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Update Price Zone Update Requests" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="CIPZ Endurance Test" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
@@ -12,13 +12,13 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Update Price Zone Update Requests" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CIPZ Endurance Test" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1404428825">
+          <collectionProp name="455057416">
             <stringProp name="1508084419">${__P(pICThreadCount,1)}</stringProp>
             <stringProp name="140648723">${__P(pICInitialDelay,1)}</stringProp>
             <stringProp name="-12310450">${__P(pICRampupTime,1)}</stringProp>
-            <stringProp name="-2090539768">${__P(pICDuration,1)}</stringProp>
+            <stringProp name="-382219120">${__P(pICDuration,10)}</stringProp>
             <stringProp name="-2067077783">${__P(pICRampDownPeriod,1)}</stringProp>
           </collectionProp>
         </collectionProp>
@@ -121,16 +121,6 @@
               <stringProp name="Argument.value">${__P(effectiveFromDate,20210728)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="minRequestId" elementType="Argument">
-              <stringProp name="Argument.name">minRequestId</stringProp>
-              <stringProp name="Argument.value">${__P(minRequestId,8809000)}</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="maxRequestId" elementType="Argument">
-              <stringProp name="Argument.name">maxRequestId</stringProp>
-              <stringProp name="Argument.value">${__P(maxRequestId,8809184)}</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
@@ -165,6 +155,379 @@
           <stringProp name="throughput">${pICTargetThroughput}</stringProp>
         </ConstantThroughputTimer>
         <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-Store Price Zone Updates" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;businessUnitNumber&quot;: &quot;${businessUnitNumber}&quot;,&#xd;
+    &quot;itemAttributeGroupId&quot;: &quot;${itemAttributeGroupId}&quot;,&#xd;
+    &quot;itemAttributeGroup&quot;:&quot;SAUCE_SPECIALTY CHEESE_MEAT_MILK_VEGETABLES&quot;,&#xd;
+    &quot;customerGroup&quot;:&quot;${customerGroup}&quot;,&#xd;
+    &quot;customerAccount&quot;: &quot;${customerAccount}&quot;,&#xd;
+    &quot;newPriceZone&quot;: 3,&#xd;
+    &quot;effectiveFromDate&quot;: &quot;${effectiveFromDate}&quot;,&#xd;
+    &quot;submissionNote&quot;: &quot;This Price Zone Update Request needs to be approved by a manager&quot;,&#xd;
+    &quot;submitter&quot;: {&#xd;
+        &quot;id&quot;: &quot;${id}&quot;,&#xd;
+        &quot;givenName&quot;: &quot;${givenName}&quot;,&#xd;
+        &quot;surname&quot;: &quot;${surname}&quot;,&#xd;
+        &quot;email&quot;: &quot;${email}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Syy-Correlation-ID</stringProp>
+                <stringProp name="Header.value">perf-cipz-${uniqueId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">client-id</stringProp>
+                <stringProp name="Header.value">cloud-pci-bff</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UniqueId for X-Correlation-Id" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${__time(,timeStamp)}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+String uniqueId;
+
+String timeStamp = vars.get(&quot;timeStamp&quot;);
+uniqueId = UUID.randomUUID().toString().split(&quot;-&quot;)[0] + UUID.randomUUID().toString().split(&quot;-&quot;)[1] + &quot;_&quot; + timeStamp;
+vars.put(&quot;uniqueId&quot;,uniqueId);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random businessUnitNumber" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+String[] businessUnitNumber = {&quot;019&quot;};
+int index = ThreadLocalRandom.current().nextInt(businessUnitNumber.length);
+vars.put(&quot;businessUnitNumber&quot;,businessUnitNumber[index]);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate Random item Attribute GroupId" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+int minimum = 22000;
+int maximum = 22000;
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String itemAttributeGroupId = Integer.toString(randomNum);
+vars.put(&quot;itemAttributeGroupId&quot;,itemAttributeGroupId);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate Random Customer Account" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+int minimum = 550101;
+int maximum = 550101;
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String customerAccount = Integer.toString(randomNum);
+vars.put(&quot;customerAccount&quot;,customerAccount);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate Random Customer Group" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+int minimum = 100000;
+int maximum = 105000;
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String customerGroup = Integer.toString(randomNum);
+vars.put(&quot;customerGroup&quot;,customerGroup);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="set date" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Calendar;
+
+LocalDate today = LocalDate.now();
+LocalDate startDate = today.plusDays(3);
+long start = startDate.toEpochDay();
+LocalDate endDate = today.plusDays(90);
+long end = endDate.toEpochDay();
+
+long randomEpochDay = ThreadLocalRandom.current().longs(start, end).findAny().getAsLong();
+String epochDate = String.valueOf(LocalDate.ofEpochDay(randomEpochDay));
+
+SimpleDateFormat df_in = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+SimpleDateFormat df_output = new SimpleDateFormat(&quot;yyyyMMdd&quot;);
+Date date = df_in.parse(epochDate);
+String randomDate = df_output.format(date);
+Calendar c = Calendar.getInstance();
+c.setTime(date);
+c.add(Calendar.DATE, 14);
+Date endDay = c.getTime();
+String randomDate2 = df_output.format(endDay);
+
+vars.put(&quot;effectiveFromDate&quot;, randomDate);
+vars.put(&quot;endDate&quot;, randomDate2);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49587">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">requestId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">requestId</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Sample.scope">all</stringProp>
+            <stringProp name="Scope.variable">${__P(requestId,1)}</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">requestId not found</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET- Get Price Zone Updates" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/price-zone-updates/${requestId}?offset=${offset}&amp;limit=${limit}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Syy-Correlation-ID</stringProp>
+                <stringProp name="Header.value">perf-cipz-${uniqueId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">client-id</stringProp>
+                <stringProp name="Header.value">cloud-pci-bff</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UniqueId for X-Correlation-Id" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${__time(,timeStamp)}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+String uniqueId;
+
+String timeStamp = vars.get(&quot;timeStamp&quot;);
+uniqueId = UUID.randomUUID().toString().split(&quot;-&quot;)[0] + UUID.randomUUID().toString().split(&quot;-&quot;)[1] + &quot;_&quot; + timeStamp;
+vars.put(&quot;uniqueId&quot;,uniqueId);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="RequestId Generation" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__P(minRequestId,8809001)},${__P(maxRequestId,8809184)}</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+String minRequestId = vars.get(&quot;minRequestId&quot;);
+String maxRequestId = vars.get(&quot;maxRequestId&quot;);
+int minimum = Integer.parseInt(minRequestId);
+int maximum = Integer.parseInt(maxRequestId);
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String requestId = Integer.toString(randomNum);
+vars.put(&quot;requestId&quot;,requestId);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET- Get Submitted Requests with Query Params" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests?request_submitter=${id}&amp;request_status=${request_status}&amp;offset=${offset}&amp;limit=${limit}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Syy-Correlation-ID</stringProp>
+                <stringProp name="Header.value">perf-cipz-${uniqueId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">client-id</stringProp>
+                <stringProp name="Header.value">cloud-pci-bff</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UniqueId for X-Correlation-Id" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${__time(,timeStamp)}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+String uniqueId;
+
+String timeStamp = vars.get(&quot;timeStamp&quot;);
+uniqueId = UUID.randomUUID().toString().split(&quot;-&quot;)[0] + UUID.randomUUID().toString().split(&quot;-&quot;)[1] + &quot;_&quot; + timeStamp;
+vars.put(&quot;uniqueId&quot;,uniqueId);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random request_submitter" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__P(request_submitter,vvit5827)}</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+String[] randomReqSubmitter = {&quot;vvit5827&quot;,&quot;iasa0862&quot;,&quot;cher8832&quot;};
+int index = ThreadLocalRandom.current().nextInt(randomReqSubmitter.length);
+vars.put(&quot;request_submitter&quot;,randomReqSubmitter[index]);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random request_status" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__P(request_status,PENDING_APPROVAL)}</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+String[] randomReqStatus = {&quot;PENDING_APPROVAL&quot;,&quot;APPROVED&quot;,&quot;REJECTED&quot;,&quot;DISCARDED&quot;};
+int index = ThreadLocalRandom.current().nextInt(randomReqStatus.length);
+vars.put(&quot;request_status&quot;,randomReqStatus[index]);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="PATCH-Update Price Zone Update Requests" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -205,7 +568,7 @@
             <stringProp name="CounterConfig.start">${__P(minRequestId,8809001)}</stringProp>
             <stringProp name="CounterConfig.end">${__P(maxRequestId,8809184)}</stringProp>
             <stringProp name="CounterConfig.incr">1</stringProp>
-            <stringProp name="CounterConfig.name">requestId</stringProp>
+            <stringProp name="CounterConfig.name">requestId1</stringProp>
             <stringProp name="CounterConfig.format"></stringProp>
             <boolProp name="CounterConfig.per_user">false</boolProp>
           </CounterConfig>
@@ -329,7 +692,7 @@ vars.put(&quot;status&quot;,randomStatus[index]);
               </elementProp>
               <elementProp name="testTitle" elementType="Argument">
                 <stringProp name="Argument.name">testTitle</stringProp>
-                <stringProp name="Argument.value">JMeterUpdatePriceZoneUpdateRequestsTest</stringProp>
+                <stringProp name="Argument.value">JMeterCIPZEnduranceTest</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="eventTags" elementType="Argument">
@@ -415,93 +778,6 @@ vars.put(&quot;status&quot;,randomStatus[index]);
           </objProp>
           <stringProp name="filename"></stringProp>
           <boolProp name="useGroupName">true</boolProp>
-        </ResultCollector>
-        <hashTree/>
-      </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
-        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
-          <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
-        </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
-        <stringProp name="ThreadGroup.duration"></stringProp>
-        <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-      </PostThreadGroup>
-      <hashTree>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
-          <boolProp name="autocommit">true</boolProp>
-          <stringProp name="checkQuery">SELECT COUNT(id) FROM PriceZoneReassignments.pz_update_requests;</stringProp>
-          <stringProp name="connectionAge">5000</stringProp>
-          <stringProp name="connectionProperties"></stringProp>
-          <stringProp name="dataSource">cipzDBConnection</stringProp>
-          <stringProp name="dbUrl">jdbc:mysql://cp-cipz-db-cluster-01-exe.cluster-c6xai0tt38eb.us-east-1.rds.amazonaws.com:3306/PriceZoneReassignments</stringProp>
-          <stringProp name="driver">com.mysql.jdbc.Driver</stringProp>
-          <stringProp name="initQuery">
-</stringProp>
-          <boolProp name="keepAlive">true</boolProp>
-          <stringProp name="password">a4T6XrIXJGwp</stringProp>
-          <stringProp name="poolMax">10</stringProp>
-          <boolProp name="preinit">false</boolProp>
-          <stringProp name="timeout">30000</stringProp>
-          <stringProp name="transactionIsolation">DEFAULT</stringProp>
-          <stringProp name="trimInterval">60000</stringProp>
-          <stringProp name="username">cpuser</stringProp>
-        </JDBCDataSource>
-        <hashTree/>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="JDBC Request - Revert Status values to PENDING_APPROVAL" enabled="true">
-          <stringProp name="dataSource">cipzDBConnection</stringProp>
-          <stringProp name="query">UPDATE PriceZoneReassignments.pz_update_requests
-SET status=&apos;PENDING_APPROVAL&apos;
-WHERE id&gt;=${minRequestId};</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="queryType">Update Statement</stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultSetMaxRows"></stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-        </JDBCSampler>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>true</responseData>
-              <samplerData>true</samplerData>
-              <xml>true</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>true</responseHeaders>
-              <requestHeaders>true</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
