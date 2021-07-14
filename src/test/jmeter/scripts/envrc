@@ -1,0 +1,4 @@
+export JMETER_DIR=/usr/share/jmeter/apache-jmeter-5.3
+export JTL_DIR=/usr/share/jmeter/jtl/perf-cipz-api
+export LOG_DIR=/usr/share/jmeter/log/perf-cipz-api
+export JMX_DIR=/usr/share/jmeter/apache-jmeter-5.3/bin/perf-cipz-api

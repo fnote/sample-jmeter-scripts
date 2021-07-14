@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Store Price Zone Updates" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Store Price Zone Updates" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="1404428825">
+            <stringProp name="1508084419">${__P(pICThreadCount,1)}</stringProp>
+            <stringProp name="140648723">${__P(pICInitialDelay,1)}</stringProp>
+            <stringProp name="-12310450">${__P(pICRampupTime,1)}</stringProp>
+            <stringProp name="-2090539768">${__P(pICDuration,1)}</stringProp>
+            <stringProp name="-2067077783">${__P(pICRampDownPeriod,1)}</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="pHostname" elementType="Argument">
+              <stringProp name="Argument.name">pHostname</stringProp>
+              <stringProp name="Argument.value">${__P(pHostname,cipz-api-exe.prcp-np.us-east-1.aws.sysco.net)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverPortHTTPS" elementType="Argument">
+              <stringProp name="Argument.name">serverPortHTTPS</stringProp>
+              <stringProp name="Argument.value">${__P(port,80)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverProtocolHTTP" elementType="Argument">
+              <stringProp name="Argument.name">serverProtocolHTTP</stringProp>
+              <stringProp name="Argument.value">${__P(serverProtocolHTTP,http)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="serverProtocolHTTPS" elementType="Argument">
+              <stringProp name="Argument.name">serverProtocolHTTPS</stringProp>
+              <stringProp name="Argument.value">${__P(serverProtocolHTTPS,https)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="pICDuration" elementType="Argument">
+              <stringProp name="Argument.name">pICDuration</stringProp>
+              <stringProp name="Argument.value">${__P(pICDuration,30)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="pICTargetThroughput" elementType="Argument">
+              <stringProp name="Argument.name">pICTargetThroughput</stringProp>
+              <stringProp name="Argument.value">${__P(pICTargetThroughput,3000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="baseDir" elementType="Argument">
+              <stringProp name="Argument.name">baseDir</stringProp>
+              <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir())}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="csvFileName" elementType="Argument">
+              <stringProp name="Argument.name">csvFileName</stringProp>
+              <stringProp name="Argument.value">${__P(pCSVFileName,data/testData.csv)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="offset" elementType="Argument">
+              <stringProp name="Argument.name">offset</stringProp>
+              <stringProp name="Argument.value">${__P(offset,0)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="limit" elementType="Argument">
+              <stringProp name="Argument.name">limit</stringProp>
+              <stringProp name="Argument.value">${__P(limit,10000)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="requestId" elementType="Argument">
+              <stringProp name="Argument.name">requestId</stringProp>
+              <stringProp name="Argument.value">${__P(requestId,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="request_submitter" elementType="Argument">
+              <stringProp name="Argument.name">request_submitter</stringProp>
+              <stringProp name="Argument.value">${__P(request_submitter,vvit5827)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="request_status" elementType="Argument">
+              <stringProp name="Argument.name">request_status</stringProp>
+              <stringProp name="Argument.value">${__P(request_status,PENDING_APPROVAL)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="businessUnitNumber" elementType="Argument">
+              <stringProp name="Argument.name">businessUnitNumber</stringProp>
+              <stringProp name="Argument.value">${__P(businessUnitNumber,068)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="itemAttributeGroupId" elementType="Argument">
+              <stringProp name="Argument.name">itemAttributeGroupId</stringProp>
+              <stringProp name="Argument.value">${__P(itemAttributeGroupId,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="customerGroup" elementType="Argument">
+              <stringProp name="Argument.name">customerGroup</stringProp>
+              <stringProp name="Argument.value">${__P(customerGroup,)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="customerAccount" elementType="Argument">
+              <stringProp name="Argument.name">customerAccount</stringProp>
+              <stringProp name="Argument.value">${__P(customerAccount,1)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="effectiveFromDate" elementType="Argument">
+              <stringProp name="Argument.name">effectiveFromDate</stringProp>
+              <stringProp name="Argument.value">${__P(effectiveFromDate,20210728)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data UserLIst" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${csvFileName}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">id,givenName,surname,email</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${pHostname}</stringProp>
+          <stringProp name="HTTPSampler.port">${serverPortHTTPS}</stringProp>
+          <stringProp name="HTTPSampler.protocol">${serverProtocolHTTP}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+          <intProp name="calcMode">4</intProp>
+          <stringProp name="throughput">${pICTargetThroughput}</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST-Store Price Zone Updates" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;businessUnitNumber&quot;: &quot;${businessUnitNumber}&quot;,&#xd;
+    &quot;itemAttributeGroupId&quot;: &quot;${itemAttributeGroupId}&quot;,&#xd;
+    &quot;itemAttributeGroup&quot;:&quot;SAUCE_SPECIALTY CHEESE_MEAT_MILK_VEGETABLES&quot;,&#xd;
+    &quot;customerGroup&quot;:&quot;${customerGroup}&quot;,&#xd;
+    &quot;customerAccount&quot;: &quot;${customerAccount}&quot;,&#xd;
+    &quot;newPriceZone&quot;: 3,&#xd;
+    &quot;effectiveFromDate&quot;: &quot;${effectiveFromDate}&quot;,&#xd;
+    &quot;submissionNote&quot;: &quot;This Price Zone Update Request needs to be approved by a manager&quot;,&#xd;
+    &quot;submitter&quot;: {&#xd;
+        &quot;id&quot;: &quot;${id}&quot;,&#xd;
+        &quot;givenName&quot;: &quot;${givenName}&quot;,&#xd;
+        &quot;surname&quot;: &quot;${surname}&quot;,&#xd;
+        &quot;email&quot;: &quot;${email}&quot;&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">X-Syy-Correlation-ID</stringProp>
+                <stringProp name="Header.value">perf-cipz-${uniqueId}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">client-id</stringProp>
+                <stringProp name="Header.value">cloud-pci-bff</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate UniqueId for X-Correlation-Id" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${__time(,timeStamp)}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+String uniqueId;
+
+String timeStamp = vars.get(&quot;timeStamp&quot;);
+uniqueId = UUID.randomUUID().toString().split(&quot;-&quot;)[0] + UUID.randomUUID().toString().split(&quot;-&quot;)[1] + &quot;_&quot; + timeStamp;
+vars.put(&quot;uniqueId&quot;,uniqueId);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random businessUnitNumber" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+String[] businessUnitNumber = {&quot;019&quot;, &quot;038&quot;,&quot;058&quot;};
+int index = ThreadLocalRandom.current().nextInt(businessUnitNumber.length);
+vars.put(&quot;businessUnitNumber&quot;,businessUnitNumber[index]);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate Random item Attribute GroupId" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+int minimum = 100000;
+int maximum = 105000;
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String itemAttributeGroupId = Integer.toString(randomNum);
+vars.put(&quot;itemAttributeGroupId&quot;,itemAttributeGroupId);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate Random Customer Account" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+int minimum = 100000;
+int maximum = 105000;
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String customerAccount = Integer.toString(randomNum);
+vars.put(&quot;customerAccount&quot;,customerAccount);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Generate Random Customer Group" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.UUID;
+
+int minimum = 100000;
+int maximum = 105000;
+Random rn = new Random();
+int range = maximum - minimum + 1;
+int randomNum =  rn.nextInt(range) + minimum;
+
+String customerGroup = Integer.toString(randomNum);
+vars.put(&quot;customerGroup&quot;,customerGroup);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="set date" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Calendar;
+
+LocalDate today = LocalDate.now();
+LocalDate startDate = today.plusDays(3);
+long start = startDate.toEpochDay();
+LocalDate endDate = today.plusDays(90);
+long end = endDate.toEpochDay();
+
+long randomEpochDay = ThreadLocalRandom.current().longs(start, end).findAny().getAsLong();
+String epochDate = String.valueOf(LocalDate.ofEpochDay(randomEpochDay));
+
+SimpleDateFormat df_in = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+SimpleDateFormat df_output = new SimpleDateFormat(&quot;yyyyMMdd&quot;);
+Date date = df_in.parse(epochDate);
+String randomDate = df_output.format(date);
+Calendar c = Calendar.getInstance();
+c.setTime(date);
+c.add(Calendar.DATE, 14);
+Date endDay = c.getTime();
+String randomDate2 = df_output.format(endDay);
+
+vars.put(&quot;effectiveFromDate&quot;, randomDate);
+vars.put(&quot;endDate&quot;, randomDate2);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49587">201</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener -Test InfluxDB" enabled="true">
+          <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="influxdbMetricsSender" elementType="Argument">
+                <stringProp name="Argument.name">influxdbMetricsSender</stringProp>
+                <stringProp name="Argument.value">org.apache.jmeter.visualizers.backend.influxdb.HttpMetricsSender</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="influxdbUrl" elementType="Argument">
+                <stringProp name="Argument.name">influxdbUrl</stringProp>
+                <stringProp name="Argument.value">http://10.133.106.155:8086/write?db=jmeter</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="application" elementType="Argument">
+                <stringProp name="Argument.name">application</stringProp>
+                <stringProp name="Argument.value">JMeterCIPZ-API</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="measurement" elementType="Argument">
+                <stringProp name="Argument.name">measurement</stringProp>
+                <stringProp name="Argument.value">jmeter</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="summaryOnly" elementType="Argument">
+                <stringProp name="Argument.name">summaryOnly</stringProp>
+                <stringProp name="Argument.value">false</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="samplersRegex" elementType="Argument">
+                <stringProp name="Argument.name">samplersRegex</stringProp>
+                <stringProp name="Argument.value">.*</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="percentiles" elementType="Argument">
+                <stringProp name="Argument.name">percentiles</stringProp>
+                <stringProp name="Argument.value">50;90;95;99</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="testTitle" elementType="Argument">
+                <stringProp name="Argument.name">testTitle</stringProp>
+                <stringProp name="Argument.value">JMeterStorePriceZoneUpdatesTest</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="eventTags" elementType="Argument">
+                <stringProp name="Argument.name">eventTags</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
+          <stringProp name="TestPlan.comments">JMeterCIPZ-API</stringProp>
+        </BackendListener>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>false</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <boolProp name="useGroupName">true</boolProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
