@@ -299,6 +299,20 @@ vars.put(&quot;request_status&quot;,randomReqStatus[index]);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random offset" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__P(offset,0)}</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+int index = ThreadLocalRandom.current().nextInt(479);
+String indexStr = String.valueOf(index);
+
+vars.put(&quot;offset&quot;, indexStr);
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
           <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
@@ -309,15 +323,6 @@ vars.put(&quot;request_status&quot;,randomReqStatus[index]);
             <stringProp name="Assertion.scope">all</stringProp>
             <stringProp name="Assertion.custom_message"></stringProp>
           </ResponseAssertion>
-          <hashTree/>
-          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable offset" enabled="true">
-            <stringProp name="maximumValue">479</stringProp>
-            <stringProp name="minimumValue">0</stringProp>
-            <stringProp name="outputFormat">0</stringProp>
-            <boolProp name="perThread">true</boolProp>
-            <stringProp name="randomSeed">100</stringProp>
-            <stringProp name="variableName">offset</stringProp>
-          </RandomVariableConfig>
           <hashTree/>
         </hashTree>
         <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener -Test InfluxDB" enabled="true">
