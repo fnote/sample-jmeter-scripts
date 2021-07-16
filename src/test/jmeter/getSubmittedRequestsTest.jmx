@@ -14,12 +14,12 @@
     <hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Get Submitted Requests" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-316677265">
+          <collectionProp name="293126858">
             <stringProp name="1508084419">${__P(pICThreadCount,5)}</stringProp>
             <stringProp name="140648723">${__P(pICInitialDelay,0)}</stringProp>
-            <stringProp name="-12310450">${__P(pICRampupTime,1)}</stringProp>
-            <stringProp name="-382219120">${__P(pICDuration,30)}</stringProp>
-            <stringProp name="-2067077783">${__P(pICRampDownPeriod,1)}</stringProp>
+            <stringProp name="-12306606">${__P(pICRampupTime,5)}</stringProp>
+            <stringProp name="2062137240">${__P(pICDuration,1800)}</stringProp>
+            <stringProp name="-2067073939">${__P(pICRampDownPeriod,5)}</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -58,7 +58,7 @@
             </elementProp>
             <elementProp name="pICTargetThroughput" elementType="Argument">
               <stringProp name="Argument.name">pICTargetThroughput</stringProp>
-              <stringProp name="Argument.value">${__P(pICTargetThroughput,3000)}</stringProp>
+              <stringProp name="Argument.value">${__P(pICTargetThroughput,300)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="baseDir" elementType="Argument">
