@@ -78,7 +78,7 @@
             </elementProp>
             <elementProp name="limit" elementType="Argument">
               <stringProp name="Argument.name">limit</stringProp>
-              <stringProp name="Argument.value">${__P(limit,10000)}</stringProp>
+              <stringProp name="Argument.value">${__P(limit,50)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="requestId" elementType="Argument">
