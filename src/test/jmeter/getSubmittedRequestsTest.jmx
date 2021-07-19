@@ -151,7 +151,7 @@
         </ConfigTestElement>
         <hashTree/>
         <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
-          <intProp name="calcMode">4</intProp>
+          <intProp name="calcMode">1</intProp>
           <stringProp name="throughput">${pICTargetThroughput}</stringProp>
         </ConstantThroughputTimer>
         <hashTree/>
