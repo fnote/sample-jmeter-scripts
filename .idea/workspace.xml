@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="927f5f66-0709-4931-ad2d-78398510baa0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/jmeter/updatePriceZoneUpdateRequestsTest.jmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/jmeter/updatePriceZoneUpdateRequestsTest.jmx" afterDir="false" />
+    <list default="true" id="927f5f66-0709-4931-ad2d-78398510baa0" name="Default Changelist" comment="updated getPriceZoneUpdatesTest.jmx with random offset.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +74,110 @@
       <option name="project" value="LOCAL" />
       <updated>1626270912060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updated the getPriceZoneUpdatesTest.jmx and getSubmittedRequestsTest.jmx with generated data constraints.">
+      <created>1626439138085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626439138085</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated the getSubmittedRequestsTest.jmx throughput and hold on time.">
+      <created>1626441025864</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626441025864</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updated the getSubmittedRequestsTest.jmx throughput and hold on time.">
+      <created>1626441850115</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1626441850115</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updated the getSubmittedRequestsTest.jmx throughput and hold on time.">
+      <created>1626441886322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1626441886322</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated the getSubmittedRequestsTest.jmx throughput and hold on time.">
+      <created>1626444554772</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1626444554772</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated the getSubmittedRequestsTest.jmx to randomize offset">
+      <created>1626446238529</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1626446238529</updated>
+    </task>
+    <task id="LOCAL-00008" summary="changed constant throughput timer - calculate tp based on -&gt; all active threads.">
+      <created>1626669354154</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1626669354154</updated>
+    </task>
+    <task id="LOCAL-00009" summary="changed the name">
+      <created>1626670813327</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1626670813327</updated>
+    </task>
+    <task id="LOCAL-00010" summary="changed application name and test title.">
+      <created>1626675999825</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1626675999825</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updated getPriceZoneUpdatesTest.jmx with random offset.">
+      <created>1626680819240</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1626680819240</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding initial cipz-api perf test data and scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding initial cipz-api perf test data and scripts" />
+    <MESSAGE value="updated the getPriceZoneUpdatesTest.jmx and getSubmittedRequestsTest.jmx with generated data constraints." />
+    <MESSAGE value="updated the getSubmittedRequestsTest.jmx throughput and hold on time." />
+    <MESSAGE value="updated the getSubmittedRequestsTest.jmx to randomize offset" />
+    <MESSAGE value="changed constant throughput timer - calculate tp based on -&gt; all active threads." />
+    <MESSAGE value="changed the name" />
+    <MESSAGE value="changed application name and test title." />
+    <MESSAGE value="updated getPriceZoneUpdatesTest.jmx with random offset." />
+    <option name="LAST_COMMIT_MESSAGE" value="updated getPriceZoneUpdatesTest.jmx with random offset." />
   </component>
 </project>
