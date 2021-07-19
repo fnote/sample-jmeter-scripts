@@ -218,6 +218,19 @@ uniqueId = UUID.randomUUID().toString().split(&quot;-&quot;)[0] + UUID.randomUUI
 vars.put(&quot;uniqueId&quot;,uniqueId);</stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random offset" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__P(offset,0)}</stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+int index = ThreadLocalRandom.current().nextInt(949);
+String indexStr = String.valueOf(index);
+
+vars.put(&quot;offset&quot;, indexStr);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
           <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="RequestId Generation" enabled="true">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters">${__P(minRequestId,8809001)},${__P(maxRequestId,8809184)}</stringProp>
