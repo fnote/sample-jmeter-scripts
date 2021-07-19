@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.1">
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
   <hashTree>
-    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Get Submitted Requests" enabled="true">
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan - Get Submitted Requests" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
@@ -12,13 +12,13 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Get Submitted Requests" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="TG - Get Submitted Requests" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-622389804">
-            <stringProp name="1508091146">${__P(pICThreadCount,8)}</stringProp>
+          <collectionProp name="-1718507366">
+            <stringProp name="1508088263">${__P(pICThreadCount,5)}</stringProp>
             <stringProp name="140648723">${__P(pICInitialDelay,0)}</stringProp>
             <stringProp name="-12306606">${__P(pICRampupTime,5)}</stringProp>
-            <stringProp name="2062137240">${__P(pICDuration,1800)}</stringProp>
+            <stringProp name="1036351744">${__P(pICDuration,180)}</stringProp>
             <stringProp name="-2067073939">${__P(pICRampDownPeriod,5)}</stringProp>
           </collectionProp>
         </collectionProp>
@@ -220,7 +220,7 @@ vars.put(&quot;uniqueId&quot;,uniqueId);</stringProp>
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET- Get Submitted Requests with Query Params" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET Req - Get Submitted Requests with Query Params" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -286,7 +286,7 @@ vars.put(&quot;request_submitter&quot;,randomReqSubmitter[index]);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
-          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random request_status" enabled="true">
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Set Random request_status" enabled="false">
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters">${__P(request_status,PENDING_APPROVAL)}</stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
@@ -340,7 +340,7 @@ vars.put(&quot;offset&quot;, indexStr);
               </elementProp>
               <elementProp name="application" elementType="Argument">
                 <stringProp name="Argument.name">application</stringProp>
-                <stringProp name="Argument.value">JMeterCIPZ-API-1</stringProp>
+                <stringProp name="Argument.value">JMeterCIPZ-API</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="measurement" elementType="Argument">
@@ -365,7 +365,7 @@ vars.put(&quot;offset&quot;, indexStr);
               </elementProp>
               <elementProp name="testTitle" elementType="Argument">
                 <stringProp name="Argument.name">testTitle</stringProp>
-                <stringProp name="Argument.value">GetSubmittedRequestsTest-1</stringProp>
+                <stringProp name="Argument.value">GetSubmittedRequestsTest</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="eventTags" elementType="Argument">
