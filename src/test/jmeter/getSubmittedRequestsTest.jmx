@@ -14,8 +14,8 @@
     <hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Get Submitted Requests" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="293126858">
-            <stringProp name="1508084419">${__P(pICThreadCount,5)}</stringProp>
+          <collectionProp name="-622389804">
+            <stringProp name="1508091146">${__P(pICThreadCount,8)}</stringProp>
             <stringProp name="140648723">${__P(pICInitialDelay,0)}</stringProp>
             <stringProp name="-12306606">${__P(pICRampupTime,5)}</stringProp>
             <stringProp name="2062137240">${__P(pICDuration,1800)}</stringProp>
@@ -151,7 +151,7 @@
         </ConfigTestElement>
         <hashTree/>
         <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
-          <intProp name="calcMode">1</intProp>
+          <intProp name="calcMode">4</intProp>
           <stringProp name="throughput">${pICTargetThroughput}</stringProp>
         </ConstantThroughputTimer>
         <hashTree/>
@@ -365,7 +365,7 @@ vars.put(&quot;offset&quot;, indexStr);
               </elementProp>
               <elementProp name="testTitle" elementType="Argument">
                 <stringProp name="Argument.name">testTitle</stringProp>
-                <stringProp name="Argument.value">JMeterGetSubmittedRequestsTest</stringProp>
+                <stringProp name="Argument.value">GetSubmittedRequestsTest</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="eventTags" elementType="Argument">
