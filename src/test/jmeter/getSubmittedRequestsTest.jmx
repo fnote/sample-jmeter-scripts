@@ -14,11 +14,11 @@
     <hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="TG - Get Submitted Requests" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1718507366">
+          <collectionProp name="-677580994">
             <stringProp name="1508088263">${__P(pICThreadCount,5)}</stringProp>
             <stringProp name="140648723">${__P(pICInitialDelay,0)}</stringProp>
             <stringProp name="-12306606">${__P(pICRampupTime,5)}</stringProp>
-            <stringProp name="1036351744">${__P(pICDuration,180)}</stringProp>
+            <stringProp name="-382070165">${__P(pICDuration,60)}</stringProp>
             <stringProp name="-2067073939">${__P(pICRampDownPeriod,5)}</stringProp>
           </collectionProp>
         </collectionProp>
@@ -360,7 +360,7 @@ vars.put(&quot;offset&quot;, indexStr);
               </elementProp>
               <elementProp name="percentiles" elementType="Argument">
                 <stringProp name="Argument.name">percentiles</stringProp>
-                <stringProp name="Argument.value">50;90;99</stringProp>
+                <stringProp name="Argument.value">90;95;99</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="testTitle" elementType="Argument">
@@ -371,6 +371,11 @@ vars.put(&quot;offset&quot;, indexStr);
               <elementProp name="eventTags" elementType="Argument">
                 <stringProp name="Argument.name">eventTags</stringProp>
                 <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="backend_influxdb.send_interval" elementType="Argument">
+                <stringProp name="Argument.name">backend_influxdb.send_interval</stringProp>
+                <stringProp name="Argument.value">5</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
