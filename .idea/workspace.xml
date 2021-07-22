@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="927f5f66-0709-4931-ad2d-78398510baa0" name="Default Changelist" comment="updated getPriceZoneUpdatesTest.jmx with random offset.">
+    <list default="true" id="927f5f66-0709-4931-ad2d-78398510baa0" name="Default Changelist" comment="storePriceZoneUpdatesTest.jmx updated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +144,21 @@
       <option name="project" value="LOCAL" />
       <updated>1626680819240</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="storePriceZoneUpdatesTest.jmx updated.">
+      <created>1626698978569</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1626698978569</updated>
+    </task>
+    <task id="LOCAL-00013" summary="storePriceZoneUpdatesTest.jmx updated.">
+      <created>1626699013042</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1626699013042</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -178,6 +192,7 @@
     <MESSAGE value="changed the name" />
     <MESSAGE value="changed application name and test title." />
     <MESSAGE value="updated getPriceZoneUpdatesTest.jmx with random offset." />
-    <option name="LAST_COMMIT_MESSAGE" value="updated getPriceZoneUpdatesTest.jmx with random offset." />
+    <MESSAGE value="storePriceZoneUpdatesTest.jmx updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="storePriceZoneUpdatesTest.jmx updated." />
   </component>
 </project>
