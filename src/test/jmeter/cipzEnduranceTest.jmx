@@ -14,11 +14,11 @@
     <hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="CIPZ Endurance Test" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="455057416">
-            <stringProp name="1508084419">${__P(pICThreadCount,1)}</stringProp>
+          <collectionProp name="-268173980">
+            <stringProp name="1508087302">${__P(pICThreadCount,4)}</stringProp>
             <stringProp name="140648723">${__P(pICInitialDelay,1)}</stringProp>
             <stringProp name="-12310450">${__P(pICRampupTime,1)}</stringProp>
-            <stringProp name="-382219120">${__P(pICDuration,10)}</stringProp>
+            <stringProp name="-382070165">${__P(pICDuration,60)}</stringProp>
             <stringProp name="-2067077783">${__P(pICRampDownPeriod,1)}</stringProp>
           </collectionProp>
         </collectionProp>
@@ -58,7 +58,7 @@
             </elementProp>
             <elementProp name="pICTargetThroughput" elementType="Argument">
               <stringProp name="Argument.name">pICTargetThroughput</stringProp>
-              <stringProp name="Argument.value">${__P(pICTargetThroughput,3000)}</stringProp>
+              <stringProp name="Argument.value">${__P(pICTargetThroughput,240)}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="baseDir" elementType="Argument">
@@ -360,7 +360,7 @@ vars.put(&quot;endDate&quot;, randomDate2);</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/cipz/price-zone-updates/${requestId}?offset=${offset}&amp;limit=${limit}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/price-zone-updates/${requestId}?offset=${offset}&amp;limit=20</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -445,7 +445,7 @@ vars.put(&quot;requestId&quot;,requestId);
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests?request_submitter=${id}&amp;request_status=${request_status}&amp;offset=${offset}&amp;limit=${limit}</stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests?request_submitter=${id}&amp;request_status=${request_status}&amp;offset=${offset}&amp;limit=50</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
