@@ -360,7 +360,7 @@ vars.put(&quot;endDate&quot;, randomDate2);</stringProp>
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/cipz/price-zone-updates/${requestId}?offset=${offset}&amp;limit=20</stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/price-zone-updates/${requestId}?offset=${offset}&amp;limit=50</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -445,7 +445,7 @@ vars.put(&quot;requestId&quot;,requestId);
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests?request_submitter=${id}&amp;request_status=${request_status}&amp;offset=${offset}&amp;limit=50</stringProp>
+          <stringProp name="HTTPSampler.path">v1/cipz/pz-update-requests?request_submitter=${id}&amp;request_status=${request_status}&amp;offset=${offset}&amp;limit=20</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
